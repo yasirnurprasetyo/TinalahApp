@@ -3,7 +3,7 @@ package com.yasir.tinalahedu.model.scanDetail
 
 import com.google.gson.annotations.SerializedName
 
-data class Result(
+data class DetailScanResult(
     @SerializedName("catatan_tokengame")
     val catatanTokengame: String,
     @SerializedName("created_at")
