@@ -9,10 +9,10 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/tinalah_logo"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/tinalah_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.TinalahEdu">
         <activity
@@ -24,6 +24,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.activity.highScore.VerifikasiHighScoreActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activity.loginRegister.UpdateUserActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activity.identify.DetailIdentifyActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activity.identify.IdentifyActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activity.main.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -40,7 +52,7 @@
             android:name=".ui.activity.history.HistoryActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activity.game.HighscoreActivity"
+            android:name=".ui.activity.highScore.HighscoreActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activity.game.ScanObjekActivity"
@@ -50,6 +62,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activity.history.DetailHistoryActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activity.identify.ListHistoryIdentifyActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activity.identify.DetailListIdentifyActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

@@ -3,21 +3,25 @@ package com.yasir.tinalahedu.model.scanDetail
 
 import com.google.gson.annotations.SerializedName
 
-data class Result(
+data class ScanDetailData(
     @SerializedName("deskripsi_gambar")
-    val deskripsiGambar: String,
+    val deskripsiGambarScan: String,
     @SerializedName("gambar_id")
-    val gambarId: Any,
+    val gambarIdScan: Any,
     @SerializedName("gambar_scan")
-    val gambarScan: String,
+    val gambarScanScan: String,
     @SerializedName("gambar_scan_url")
-    val gambarScanUrl: String,
+    val gambarScanUrlScan: String,
     @SerializedName("id_scan")
-    val idScan: String,
+    val idScanScan : String,
     @SerializedName("kategori_gambar")
-    val kategoriGambar: String,
+    val kategoriGambarScan : String,
     @SerializedName("tokengame_id")
-    val tokengameId: String,
+    val tokengameIdScan : String,
     @SerializedName("user_id")
-    val userId: String
+    val userIdScan : String,
+    @SerializedName("nama_gambar")
+    val namaGambarScan : String,
+    @SerializedName("gambar_url")
+    val gambarUrl : String
 )

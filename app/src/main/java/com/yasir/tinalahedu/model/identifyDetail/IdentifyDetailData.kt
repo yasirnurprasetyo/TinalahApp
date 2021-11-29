@@ -1,9 +1,11 @@
 package com.yasir.tinalahedu.model.identifyDetail
 
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-data class IdentifyDetailResult(
+data class IdentifyDetailData(
     @SerializedName("id_identify")
     val idIdentify: String,
     @SerializedName("gambar_id_identify")
@@ -46,4 +48,65 @@ data class IdentifyDetailResult(
     val gambarIdentify: String,
     @SerializedName("gambar_identify_url")
     val gambarIdentifyUrl: String,
-)
+) : Parcelable {
+    constructor(source: Parcel) : this(
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString(),
+        source.readString()
+    )
+
+    override fun describeContents() = 0
+
+    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
+        writeString(idIdentify)
+        writeString(gambarIdIdentify)
+        writeString(idGambar)
+        writeString(namaGambar)
+        writeString(gambar)
+        writeString(gambarUrl)
+        writeString(kategoriGambar)
+        writeString(deskripsiGambar)
+        writeString(userIdIdentify)
+        writeString(idUser)
+        writeString(nameUser)
+        writeString(emailUser)
+        writeString(passwordUser)
+        writeString(phoneUser)
+        writeString(imageUser)
+        writeString(imageUrl)
+        writeString(tokenUser)
+        writeString(tokenExpiredUser)
+        writeString(roleUser)
+        writeString(gambarIdentify)
+        writeString(gambarIdentifyUrl)
+    }
+
+    companion object {
+        @JvmField
+        val CREATOR: Parcelable.Creator<IdentifyDetailData> =
+            object : Parcelable.Creator<IdentifyDetailData> {
+                override fun createFromParcel(source: Parcel): IdentifyDetailData =
+                    IdentifyDetailData(source)
+
+                override fun newArray(size: Int): Array<IdentifyDetailData?> = arrayOfNulls(size)
+            }
+    }
+}

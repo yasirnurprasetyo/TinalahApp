@@ -65,6 +65,11 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+    //bottom sheet
+    implementation "com.arthurivanets.bottomsheet:bottomsheets-core:1.1.2"
+    implementation "com.arthurivanets.bottomsheet:bottomsheets-sheets:1.1.2"
+    implementation "com.arthurivanets.bottomsheet:bottomsheets-ktx:1.1.2"
+
     implementation "com.arthurivanets.bottomsheet:bottomsheets-core:1.0.0"
 
     implementation 'com.github.NaimishTrivedi:FBToast:1.0'

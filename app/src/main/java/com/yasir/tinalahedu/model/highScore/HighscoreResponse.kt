@@ -7,7 +7,7 @@ data class HighscoreResponse(
     @SerializedName("message")
     val message: String,
     @SerializedName("result")
-    val result: List<Result>,
+    val highscoreResult: List<HighscoreData>,
     @SerializedName("status")
     val status: Boolean
 )

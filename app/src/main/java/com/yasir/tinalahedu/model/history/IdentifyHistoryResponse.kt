@@ -7,7 +7,7 @@ data class IdentifyHistoryResponse(
     @SerializedName("message")
     val message: String,
     @SerializedName("result")
-    val result: List<Result>,
+    val identifyHistoryData: List<IdentifyHistoryData>,
     @SerializedName("status")
     val status: Boolean
 )

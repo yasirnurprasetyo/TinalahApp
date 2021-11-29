@@ -15,7 +15,7 @@
         android:paddingRight="8dp">
 
         <ImageView
-            android:id="@+id/iv_scan_objek_history"
+            android:id="@+id/iv_scan_objek_history_identify"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:scaleType="centerCrop"
@@ -25,7 +25,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tv_nama_history"
+            android:id="@+id/tv_nama_history_identify"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -33,11 +33,11 @@
             android:text="TextView"
             android:textColor="@color/colorPrimaryText"
             android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/iv_scan_objek_history"
+            app:layout_constraintStart_toEndOf="@+id/iv_scan_objek_history_identify"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_kategori_history"
+            android:id="@+id/tv_kategori_history_identify"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
@@ -45,8 +45,8 @@
             android:text="TextView"
             android:textSize="18sp"
             android:textColor="@color/colorSecondaryText"
-            app:layout_constraintStart_toEndOf="@+id/iv_scan_objek_history"
-            app:layout_constraintTop_toBottomOf="@+id/tv_nama_history" />
+            app:layout_constraintStart_toEndOf="@+id/iv_scan_objek_history_identify"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama_history_identify" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     

@@ -25,12 +25,15 @@ data class UserData(
     val tokenExpiredUser: String,
     @SerializedName("role_user")
     val roleUser: String,
+    @SerializedName("is_active")
+    val isActive: String,
     @SerializedName("create_at")
     val createAt: String,
     @SerializedName("update_at")
     val updateAt: String
 ) : Parcelable {
     constructor(source: Parcel) : this(
+        source.readString(),
         source.readString(),
         source.readString(),
         source.readString(),
@@ -58,6 +61,7 @@ data class UserData(
         writeString(tokenUser)
         writeString(tokenExpiredUser)
         writeString(roleUser)
+        writeString(isActive)
         writeString(createAt)
         writeString(updateAt)
     }

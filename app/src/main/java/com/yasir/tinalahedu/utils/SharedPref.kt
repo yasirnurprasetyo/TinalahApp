@@ -21,11 +21,9 @@ class SharedPref(activity: Activity) {
     val mypref = "MAIN_PRF"
     val mypref2 = "MAIN_PRF2"
     val sp : SharedPreferences
-//    val sp2 : SharedPreferences
 
     init {
         sp = activity.getSharedPreferences(mypref, Context.MODE_PRIVATE)
-//        sp2 = activity.getSharedPreferences(mypref2, Context.MODE_PRIVATE)
     }
 
     fun setStatusLogin(status: Boolean){
@@ -49,6 +47,9 @@ class SharedPref(activity: Activity) {
     fun setToken(value : GameData){
         val data : String = Gson().toJson(value, GameData::class.java)
         sp.edit().putString(token, data).apply()
+    }
+    fun setTokenNull(token : String){
+        sp.edit().putString(token, "").apply()
     }
 
     fun getToken(): GameData? {

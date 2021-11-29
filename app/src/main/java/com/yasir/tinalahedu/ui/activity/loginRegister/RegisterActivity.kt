@@ -53,6 +53,7 @@ class RegisterActivity : AppCompatActivity(), GeneralView {
                 "",
                 "",
                 "",
+                "",
                 ""
             )
             if(validate()) {
@@ -65,8 +66,15 @@ class RegisterActivity : AppCompatActivity(), GeneralView {
         }
         iv_image_user_register.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            Log.d("intent", "intent : "+intent)
             startActivityForResult(intent, 12)
         }
+//        iv_image_user_register.setOnClickListener {
+//            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+//            intent.type = "image/*"
+//            Log.d("intent", "intent : "+intent)
+//            startActivityForResult(intent, 12)
+//        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -77,6 +85,7 @@ class RegisterActivity : AppCompatActivity(), GeneralView {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOS)
             imageBase64 = Base64.encodeToString(byteArrayOS.toByteArray(), Base64.DEFAULT)
             Glide.with(this).load(bitmap).into(iv_image_user_register)
+            Log.d("bitmap", "bitmap : "+bitmap)
         }
     }
 

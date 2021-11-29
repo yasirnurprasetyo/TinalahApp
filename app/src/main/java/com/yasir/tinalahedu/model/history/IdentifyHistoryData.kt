@@ -1,9 +1,11 @@
 package com.yasir.tinalahedu.model.history
 
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-data class Result(
+data class IdentifyHistoryData(
     @SerializedName("created_at_gambar")
     val createdAtGambar: String,
     @SerializedName("created_at_identify")
@@ -58,4 +60,74 @@ data class Result(
     val updatedAtUser: String,
     @SerializedName("user_id_identify")
     val userIdIdentify: String
-)
+) : Parcelable {
+    constructor(source: Parcel) : this (
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString(),
+    source.readString()
+    )
+
+    override fun describeContents() = 0
+
+    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest){
+        writeString(createdAtGambar)
+        writeString(createdAtIdentify)
+        writeString(createdAtUser)
+        writeString(deskripsiGambar)
+        writeString(emailUser)
+        writeString(gambar)
+        writeString(gambarIdIdentify)
+        writeString(gambarIdentify)
+        writeString(gambarIdentifyUrl)
+        writeString(gambarUrl)
+        writeString(idGambar)
+        writeString(idIdentify)
+        writeString(idUser)
+        writeString(imageUrl)
+        writeString(imageUser)
+        writeString(kategoriGambar)
+        writeString(namaGambar)
+        writeString(nameUser)
+        writeString(passwordUser)
+        writeString(phoneUser)
+        writeString(roleUser)
+        writeString(tokenExpiredUser)
+        writeString(tokenUser)
+        writeString(updatedAtGambar)
+        writeString(updatedAtIdentify)
+        writeString(updatedAtUser)
+        writeString(userIdIdentify)
+    }
+
+    companion object{
+        @JvmField
+        val CREATOR: Parcelable.Creator<IdentifyHistoryData> = object : Parcelable.Creator<IdentifyHistoryData>{
+            override fun createFromParcel(source: Parcel): IdentifyHistoryData = IdentifyHistoryData(source)
+            override fun newArray(size: Int): Array<IdentifyHistoryData?> = arrayOfNulls(size)
+        }
+    }
+}

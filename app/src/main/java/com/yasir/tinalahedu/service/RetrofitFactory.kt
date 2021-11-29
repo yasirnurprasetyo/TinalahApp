@@ -12,12 +12,13 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitFactory {
 //    const val BASE_URL = ApiConfig.apiFiskom +"/TinalahWebService/api/v1/"
-    const val BASE_URL = ApiConfig.apiWifiPribadi +"/tinalahAPI/api/v1/"
+    const val BASE_URL = ApiConfig.apiKampus +"/tinalahAPI/api/v1/"
+
     fun createLogin(): RetrofitService {
         //Inisiasi builder
         val builder = OkHttpClient().newBuilder()
-        builder.connectTimeout(15, TimeUnit.SECONDS)
-        builder.connectTimeout(15, TimeUnit.SECONDS)
+        builder.connectTimeout(60, TimeUnit.SECONDS)
+        builder.connectTimeout(60, TimeUnit.SECONDS)
         //Create Logging to watch Log
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.HEADERS
@@ -39,8 +40,9 @@ object RetrofitFactory {
     fun create(context: Context): RetrofitService {
         val token = Preferences.getToken(context)
         val builder = OkHttpClient().newBuilder()
-        builder.connectTimeout(15, TimeUnit.SECONDS)
-        //builder.connectTimeout(15, TimeUnit.SECONDS)
+        builder.connectTimeout(60, TimeUnit.SECONDS)
+        builder.writeTimeout(60, TimeUnit.SECONDS)
+        builder.readTimeout(60, TimeUnit.SECONDS)
 
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.HEADERS

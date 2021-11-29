@@ -47,6 +47,7 @@
                 android:textSize="28sp" />
 
             <ImageView
+                android:id="@+id/iv_user_profile"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="20dp"
@@ -97,11 +98,48 @@
                     android:paddingHorizontal="20dp"
                     android:paddingVertical="20dp">
 
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/btn_edit_profile"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:gravity="center_vertical">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:orientation="horizontal">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                app:srcCompat="@drawable/ic_edit" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="10dp"-->
+<!--                                android:text="Ubah Profile"-->
+<!--                                android:textSize="20sp"-->
+<!--                                android:textColor="@color/colorPrimaryDark" />-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_alignParentRight="true"-->
+<!--                            app:srcCompat="@drawable/ic_baseline_chevron_right" />-->
+
+<!--                    </RelativeLayout>-->
+
                     <RelativeLayout
-                        android:id="@+id/btn_editProfile"
+                        android:id="@+id/btn_off_account"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp"
                         android:gravity="center_vertical">
 
                         <LinearLayout
@@ -113,13 +151,13 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:srcCompat="@drawable/ic_edit" />
+                                app:srcCompat="@drawable/ic_baseline_delete_forever" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:text="Ubah Profile"
+                                android:text="Non-Aktifkan Akun"
                                 android:textSize="20sp"
                                 android:textColor="@color/colorPrimaryDark" />
 
@@ -134,7 +172,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/btn_ubahPassword"
+                        android:id="@+id/btn_logout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"

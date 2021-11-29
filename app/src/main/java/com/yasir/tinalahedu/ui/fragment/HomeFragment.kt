@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import com.yasir.tinalahedu.R
-import com.yasir.tinalahedu.ui.activity.game.HighscoreActivity
+import com.yasir.tinalahedu.ui.activity.highScore.HighscoreActivity
+import com.yasir.tinalahedu.ui.activity.highScore.VerifikasiHighScoreActivity
 import com.yasir.tinalahedu.ui.activity.history.HistoryActivity
+import com.yasir.tinalahedu.ui.activity.identify.IdentifyActivity
 import com.yasir.tinalahedu.ui.activity.verifikasiToken.VerifikasiActivity
 
 class HomeFragment : Fragment() {
@@ -45,7 +47,10 @@ class HomeFragment : Fragment() {
             startActivity(Intent(requireActivity(), HistoryActivity::class.java))
         }
         btnHighScore.setOnClickListener {
-            startActivity(Intent(requireActivity(), HighscoreActivity::class.java))
+            startActivity(Intent(requireActivity(), VerifikasiHighScoreActivity::class.java))
+        }
+        btnIdentifikasi.setOnClickListener {
+            startActivity(Intent(requireActivity(), IdentifyActivity::class.java))
         }
     }
 }

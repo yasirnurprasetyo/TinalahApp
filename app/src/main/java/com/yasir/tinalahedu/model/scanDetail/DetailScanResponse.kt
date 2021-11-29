@@ -7,7 +7,8 @@ data class DetailScanResponse(
     @SerializedName("message")
     val message: String,
     @SerializedName("result")
-    val result: List<Result>,
+//    val detailScanData: List<DetailScanData>,
+    val detailScanResult: DetailScanData,
     @SerializedName("status")
     val status: Boolean
 )

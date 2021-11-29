@@ -7,7 +7,7 @@ data class IdentifyDetailResponse(
     @SerializedName("message")
     val message: String,
     @SerializedName("result")
-    val result: List<Result>,
+    val identifyDetailData: IdentifyDetailData,
     @SerializedName("status")
     val status: Boolean
 )

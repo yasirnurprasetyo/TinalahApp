@@ -39,8 +39,8 @@ class ScanAdapter (
         val ivScan : ImageView = itemView.findViewById(R.id.iv_scan_objek_history)
         fun bindModel(scan : HistoryData, listener: Listener){
             namaScan.text = scan.namaGambar
-            kategoriScan.text = scan.kategori
-            Glide.with(itemView.context).load(scan.imageUrl).into(ivScan)
+            kategoriScan.text = scan.kategoriGambar
+            Glide.with(itemView.context).load(scan.gambarUrl).into(ivScan)
             itemView.setOnClickListener {
                 listener.onItemClick(scan)
             }

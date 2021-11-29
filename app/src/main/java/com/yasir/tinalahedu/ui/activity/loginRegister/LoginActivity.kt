@@ -11,6 +11,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.tfb.fbtoast.FBToast
 import com.yasir.tinalahedu.LoginView
+import com.yasir.tinalahedu.Preferences
 import com.yasir.tinalahedu.Preferences.saveToken
 import com.yasir.tinalahedu.R
 import com.yasir.tinalahedu.model.login.LoginResponse
@@ -45,7 +46,19 @@ class LoginActivity : AppCompatActivity(), LoginView {
         btn_login.setOnClickListener {
             val username = et_username_login.text.toString()
             val password = et_password_login.text.toString()
-            presenter.login(username, password)
+            if (cb_remember.isChecked) {
+                Preferences.saveUsername(username, this)
+                Preferences.savePassword(password, this)
+            }
+            if(username.isEmpty() && password.isEmpty()){
+                FBToast.errorToast(this, "Silahkan masukkan Email dan Password" , FBToast.LENGTH_SHORT)
+            }else if (username.isEmpty()){
+                FBToast.errorToast(this, "Email tidak boleh kosong" , FBToast.LENGTH_SHORT)
+            }else if (password.isEmpty()){
+                FBToast.errorToast(this, "Password tidak boleh kosong" , FBToast.LENGTH_SHORT)
+            }else{
+                presenter.login(username, password)
+            }
         }
     }
 
@@ -56,8 +69,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     override fun error(error: Throwable?) {
-        FBToast.errorToast(this, "Login Gagal" , FBToast.LENGTH_SHORT)
-        Log.e("error", "kesalahan : "+error)
+        FBToast.errorToast(this, "Login Gagal, Email dan Password Salah atau Belum Terdaftar" , FBToast.LENGTH_SHORT)
     }
 
     override fun success(response: LoginResponse) {

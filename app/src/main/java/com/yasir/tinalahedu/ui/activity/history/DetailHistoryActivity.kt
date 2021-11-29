@@ -24,10 +24,10 @@ class DetailHistoryActivity : AppCompatActivity(), GeneralView {
     }
 
     fun populateData(){
-        Glide.with(this).load(scan.imageUrl).into(iv_gambar_detail_history)
+        Glide.with(this).load(scan.gambarScanUrl).into(iv_gambar_detail_history)
         tv_nama_detail_history.setText(scan.namaGambar)
-        tv_kategori_detail_history.setText(scan.kategori)
-        tv_deskripsi_detail_history.setText(scan.deskripsi)
+        tv_kategori_detail_history.setText(scan.gambar)
+        tv_deskripsi_detail_history.setText(scan.kategoriGambar)
     }
 
     override fun showLoading() {
